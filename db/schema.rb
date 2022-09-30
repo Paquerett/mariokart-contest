@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_153735) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_161102) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chickens", force: :cascade do |t|
+    t.string "circuit_name"
+    t.string "circuit_avatar"
+    t.bigint "tournament_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tournament_id"], name: "index_chickens_on_tournament_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "nickname"
+    t.string "avatar"
+    t.string "points"
+    t.bigint "tournament_id", null: false
+    t.bigint "chicken_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chicken_id"], name: "index_players_on_chicken_id"
+    t.index ["tournament_id"], name: "index_players_on_tournament_id"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tournaments_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_153735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chickens", "tournaments"
+  add_foreign_key "players", "chickens"
+  add_foreign_key "players", "tournaments"
+  add_foreign_key "tournaments", "users"
 end
