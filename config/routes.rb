@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "menu", to: "pages#menu"
   resources :tournaments, only: %i[new create] do
+    resources :players, only: %i[new create]
     member do
       get :qualification
       get :demifinal
