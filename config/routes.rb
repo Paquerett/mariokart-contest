@@ -5,4 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "menu", to: "pages#menu"
+  resources :tournaments, only: %i[new create] do
+    member do
+      get :qualification
+      get :demifinal
+      get :final
+      get :ranking
+    end
+  end
+  resources :chickens, only: %i[show]
 end
