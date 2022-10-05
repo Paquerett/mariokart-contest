@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Mario Kart Contest"
+meta_title: "Mario Kart Contest - Product tagline"
+meta_description: "Relevant description"
+meta_image: "cover.png"
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
