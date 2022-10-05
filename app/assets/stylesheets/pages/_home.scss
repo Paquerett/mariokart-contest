@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.home-page {
+  width: 100%;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+
+.home-titre {
+  background-image: url("mariokart-titre.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 148px;
+  margin-left: 35vh;
+  transform: translateX(-50%);
+}
