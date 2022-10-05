@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Mario Kart Contest"
+meta_title: "Mario Kart Contest - La meilleure application pour savoir qui est le meilleur à Mario Kart!"
+meta_description: "La meilleure application pour savoir qui est le meilleur à Mario Kart!"
+meta_image: "cover.png"
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
