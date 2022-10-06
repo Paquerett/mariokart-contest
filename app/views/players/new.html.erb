@@ -1,0 +1,11 @@
+     <% @players.each do |player| %>
+    <%= simple_form_for [@tournament, player] do |f| %>
+    <ul>
+      <li>
+        <%= f.input :nickname,
+                label: "nom du participant" %>
+      </li>
+    <%= f.button :submit, "ajouter le joueur" %>
+    </ul>
+   <% end %>
+    <% end %>

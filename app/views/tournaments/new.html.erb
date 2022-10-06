@@ -1,0 +1,14 @@
+<%= simple_form_for(@tournament) do |f| %>
+
+  <div class="form">
+    <%= f.input :name,
+                label: "Nom du tournoi" %>
+  <%= f.input :nbplayers,
+                label: "Nombre de participants" %>
+  </div>
+
+  <div class="btn-submit">
+    <%= f.button :submit,"Créer un tournoi" %>
+  </div>
+
+<% end %>
