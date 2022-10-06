@@ -1,19 +1,29 @@
 class PlayersController < ApplicationController
   def new
-    @iterator = 1
+    iterator = 0
     @tournament = Tournament.find(params[:tournament_id])
-    players = []
-    while iterator < tournament.nbplayers
-      player = Player.new
-      players << player
-      iterator += 1
-    end
-    @players = players
+    @players =[]
+   @tournament.nbplayers.times do
+    @players << Player.new
+   end
   end
 
   def create
-    @player = Tournament.find(params[:id])
-    @player.tournament = Tournament.find(params[:tournament_id])
+    @player = Player.new(player_params)
+    @tournament = Tournament.find(params[:tournament_id])
+    @player.tournament = @tournament
     @player.save
+    if @tournament.nbplayers == @tournament.players.count
+      redirect_to qualification_tournament_path(@tournament), status: :see_other
+    end
+  end
+
+  def qualification
+  end
+
+  private
+
+  def player_params
+    params.require(:player).permit(:nickname)
   end
 end

@@ -1,15 +1,11 @@
-<% while @iterator < @tournament.nbplayers %>
-  <% @player = Player.new %>
-  <%= simple_form_for(@player) do |f| %>
-
-    <div class="form">
-      <%= f.input :nickname,
-                  label: "Nom du participant" %>
-    </div>
-
-    <div class="btn-submit">
-      <%= f.button :submit,"Commencer le tournois" %>
-    </div>
-  <% end %>
-<% end %>
-<% end %>
+     <% @players.each do |player| %>
+    <%= simple_form_for [@tournament, player] do |f| %>
+    <ul>
+      <li>
+        <%= f.input :nickname,
+                label: "nom du participant" %>
+      </li>
+    <%= f.button :submit, "ajouter le joueur" %>
+    </ul>
+   <% end %>
+    <% end %>
