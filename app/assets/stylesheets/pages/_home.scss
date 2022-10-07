@@ -1,4 +1,5 @@
-// Specific CSS for your home-page
+// STYLE DE LA HOME
+
 html, body{
   margin :0;
   padding: 0;
@@ -35,6 +36,8 @@ html, body{
     animation: zoom 2s ease-in-out forwards;
   }
 }
+
+// ANIMATION DE LA HOME
 
 @keyframes zoom {
   0% {
