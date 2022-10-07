@@ -14,3 +14,13 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+// Oliver font
+@font-face {
+  font-family: "Nintendo";
+  font-display: swap;
+  src: url('Nintendo.woff2') format('woff2'),
+       url('Nintendo.woff') format('woff');
+}
+
+$my-font: "Nintendo";
