@@ -1,16 +1,23 @@
 // Specific CSS for your home-page
+html, body{
+  margin :0;
+  padding: 0;
+  height: 100%;
+}
+
 .home-page {
   width: 100%;
-  margin-top: 50vh;
-  transform: translateY(-50%);
+	min-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-titre {
   background-image: url("mariokart-titre.svg");
   background-repeat: no-repeat;
   background-position: center;
-  width: 200px;
+  width: 327px;
   height: 148px;
-  margin-left: 35vh;
-  transform: translateX(-50%);
 }
