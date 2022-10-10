@@ -1,4 +1,5 @@
-// Specific CSS for your home-page
+// STYLE DE LA HOME
+
 html, body{
   margin :0;
   padding: 0;
@@ -12,12 +13,44 @@ html, body{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  .home-title {
+    background-image: url("mariokart-titre.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 327px;
+    height: 148px;
+    position: absolute;
+  }
+
+  .contest-title {
+    background-image: url("contest-banner.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 183px;
+    height: 43px;
+    top: 32px;
+    left: -19px;
+    position: relative;
+    overflow: hidden;
+    animation: zoom 2s ease-in-out forwards;
+  }
 }
 
-.home-titre {
-  background-image: url("mariokart-titre.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 327px;
-  height: 148px;
+// ANIMATION DE LA HOME
+
+@keyframes zoom {
+  0% {
+    transform: scale(200);
+    left: -1800px;
+  }
+
+  50% {
+    transform: scale(200);
+    left: -1800px;
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
