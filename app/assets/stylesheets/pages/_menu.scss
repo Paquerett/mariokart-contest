@@ -7,6 +7,10 @@ a {
   text-decoration-line: none;
 }
 // MENU BUTTON
+.btn-menu {
+  margin-top: -100px;
+}
+
 .white-border {
   background-color: white;
   width: 260px;
@@ -77,4 +81,12 @@ a {
       color: #CCCCCC;
     }
   }
+}
+
+// IMAGE
+
+.mario-image-menu {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
