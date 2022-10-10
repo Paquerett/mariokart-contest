@@ -1,35 +1,37 @@
 // FORMS STYLE
 
 .forms-page {
+  color: white;
   margin: 0;
-  padding: 30px;
+  padding: 60px;
   height: 100%;
   background-color: $red;
   text-align: center;
+  font-family: $my-font;
+
+  h2 {
+    font-family: $my-font;
+    color: white;
+    font-size: 90px;
+    padding: 0px 0px 30px 0px;
+  }
 }
 
-
-
-
-
-
-
-
-
-#user_email {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
+.form-control {
+  background-color: $red;
+  color: white;
+  font-size: 25px;
 }
 
-#user_email:focus {
-  border: 3px solid black;
+.form-label {
+  color: $red;
+  font-size: 4px;
 }
+
+.form-text {
+  color: white;
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -40,254 +42,96 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid black;
-  -webkit-text-fill-color: black;
+  border: 5px solid white;
+  -webkit-text-fill-color: white;
   transition: background-color 5000s ease-in-out 0s;
+  text-align: center;
+  font-family: $my-font;
 }
 
-#user_password {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
+.form-actions {
+  font-family: $my-font;
+  font-size: 20px;
+  color: white;
+}
+
+// EMAIL INPUT
+
+#user_email {
+  background-color: $red;
+  border: 5px solid white;
+  color: white;
   text-align: center;
-  color: $gray;
-  font-size: 16px;
+}
+
+#user_email:focus {
+  border: 6px solid white;
+}
+
+// PASSWORD INPUT
+
+#user_password {
+  background-color: $red;
+  border: 5px solid white;
+  color: white;
+  text-align: center;
 }
 
 #user_password:focus {
-  border: 3px solid black;
+  border: 6px solid white;
 }
 
-#user_first_name {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_first_name:focus {
-  border: 3px solid black;
-}
-
-#user_social_media {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_social_media:focus {
-  border: 3px solid black;
-}
+// PASSWORD CONFIRMATION INPUT
 
 #user_password_confirmation {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
+  background-color: $red;
+  border: 5px solid white;
+  color: white;
   text-align: center;
-  color: $gray;
-  font-size: 16px;
 }
 
 #user_password_confirmation:focus {
-  border: 3px solid black;
+  border: 6px solid white;
 }
 
-.form-control:focus {
-  color: #000000;
-  background-color: #FDFDFD;
-  border: 1px solid black;
-  outline: 0;
-  box-shadow: 0 0 0 0;
-}
 
-#user_instagram_account {
+// // SUBMIT BUTTON
+
+#submit-form-btn {
+  font-family: $my-font;
+  border-radius: 0px;
   background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_instagram_account:focus {
-  border: 3px solid black;
-}
-
-#user_phone_number {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_phone_number:focus {
-  border: 3px solid black;
-}
-
-#user_user_photo {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_user_photo:focus {
-  border: 3px solid black;
-}
-
-
-
-
-// SUBMIT BUTTON
-
-//PINK
-#submit-pink-btn {
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  background-color: white;
-  height: 56px;
+  border-color: white;
+  border: none;
   padding: 0px 0px 0px 0px;
-  margin: 20px;
+  margin: 40px;
+
+  .btn {
+    font-size: 40px;
+    color: $red;
+    border: none;
+    padding: 0px;
+  }
 }
 
-#submit-pink-btn:focus-within {
-  background-color: $pink;
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  height: 56px;
-  padding: 0px 0px 0px 0px;
-  margin: 20px;
+#submit-form-btn:focus-within {
+  background-color: #B8000F;
+  border-color: #B8000F;
+  color: white;
 }
 
-//GREEN
-#submit-green-btn {
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  background-color: white;
-  height: 56px;
-  padding: 0px 0px 0px 0px;
-  margin: 20px;
-}
+// SHARED LINKS
 
-#submit-green-btn:focus-within {
-  background-color: $green;
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  height: 56px;
-  padding: 0px 0px 0px 0px;
-  margin: 20px;
-}
+p {
+  color: grey;
+  font-size: 20px;
+  line-height: 18px;
 
-//BLUE
-#submit-blue-btn {
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  background-color: white;
-  height: 56px;
-  padding: 0px 0px 0px 0px;
-  margin: 20px;
-}
+  a {
+    color: grey;
+  }
 
-#submit-blue-btn:focus-within {
-  background-color: $blue;
-  color: black;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 5px;
-  height: 56px;
-  padding: 0px 0px 0px 0px;
-  margin: 20px;
-}
-
-.btn {
-  padding: 0px 10px 0px 10px;
-  line-height: 20px;
-}
-
-
-// Chat
-#message_content {
-  height: 28px;
-  margin: 0px;
-}
-
-
-#new_message {
-  margin: 4px 10px 2px 10px;
-}
-
-#user_instagram_account {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_instagram_account:focus {
-  border: 3px solid black;
-}
-
-#user_phone_number {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  height: 28px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_phone_number:focus {
-  border: 3px solid black;
-}
-
-#user_user_photo {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  text-align: center;
-  color: $gray;
-  font-size: 16px;
-}
-
-#user_user_photo:focus {
-  border: 3px solid black;
+  a:hover {
+    color: white;
+  }
 }

@@ -1,0 +1,80 @@
+// CSS MENU
+.menu-page {
+  background-color: $blue;
+}
+
+a {
+  text-decoration-line: none;
+}
+// MENU BUTTON
+.white-border {
+  background-color: white;
+  width: 260px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+
+  .dark-red-border {
+    background-color: #B8000F;
+    width: 250px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px black;
+  }
+
+  .light-red-border {
+    background-color: #fd6b74;
+    width: 244px;
+    height: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .red-container {
+    background-color: $red;
+    color: white;
+    text-align: center;
+    width: 240px;
+    height: 110px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-family: $my-font;
+      font-size: 50px;
+      line-height: 40px;
+      margin: 0px;
+    }
+  }
+}
+
+.white-border:hover {
+  background-color: #CCCCCC;
+
+  .dark-red-border {
+    background-color: #8D010B;
+    box-shadow: none;
+  }
+
+  .light-red-border {
+    background-color: #CC424E;
+  }
+
+  .red-container {
+    background-color: #B80210;
+
+    h2 {
+      color: #CCCCCC;
+    }
+  }
+}
