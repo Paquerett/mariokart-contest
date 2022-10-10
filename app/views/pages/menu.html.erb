@@ -1,3 +1,37 @@
-<%= link_to "Créer un tournoi", new_tournament_path, data: {turbo_method: :get} %>
-<h2>Reprendre un tournoi</h2>
-<h2>Voir tous mes tournois</h2>
+<%# MENU PAGE %>
+
+<div class="home-page menu-page">
+
+  <%= link_to new_tournament_path, data: {turbo_method: :get} do %>
+    <div class="white-border">
+      <div class="dark-red-border">
+        <div class="light-red-border">
+          <div class="red-container">
+            <h2>CREER UN TOURNOIS</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="white-border">
+    <div class="dark-red-border">
+      <div class="light-red-border">
+        <div class="red-container">
+          <h2>REPRENDRE UN TOURNOIS</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="white-border">
+    <div class="dark-red-border">
+      <div class="light-red-border">
+        <div class="red-container">
+          <h2>VOIR TOUS MES TOURNOIS</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,99 @@
+// NEW TOURNAMENT PAGE
+.tounament-page {
+  background-image: url('fonddecran.jpeg');
+  background-size: cover;
+  background-color: $dark-yellow;
+}
+
+// FORM
+.tournament-form {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+// BUTTON
+.return-btn {
+  position: absolute;
+  padding: 10px;
+}
+
+.btn {
+  font-family: $my-font;
+  color: white;
+}
+
+.white-border-btn {
+  background-color: white;
+  width: 320px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 30px 10px 10px 10px;
+
+
+  .dark-blue-border {
+    background-color: #0554cb;
+    width: 310px;
+    height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px black;
+  }
+
+  .light-blue-border {
+    background-color: #8cb9fc;
+    width: 304px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .blue-container {
+    background-color: $blue;
+    color: white;
+    text-align: center;
+    width: 300px;
+    height: 76px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    font-family: $my-font;
+    font-size: 50px;
+    line-height: 40px;
+    margin: 0px;
+    color: white;
+  }
+}
+
+.white-border-btn:hover {
+  background-color: #CCCCCC;
+
+  .dark-red-border {
+    background-color: #023e97;
+    box-shadow: none;
+  }
+
+  .light-red-border {
+    background-color: #759ad1;
+  }
+
+  .red-container {
+    background-color: #0a5ad1;
+  }
+
+  .btn {
+    color: #CCCCCC;
+  }
+}
