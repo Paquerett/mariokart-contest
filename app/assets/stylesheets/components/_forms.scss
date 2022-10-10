@@ -94,6 +94,31 @@ select:-webkit-autofill:focus {
   border: 6px solid white;
 }
 
+// TOURNAMENT NAME INPUT
+
+#tournament_name {
+  background-color: #ffffff;
+  border: 5px solid #0554cb;
+  color: $blue;
+  text-align: center;
+}
+
+#tournament_name:focus {
+  border: 6px solid #0554cb;
+}
+
+// TOURNAMENT NBPLAYERS INPUT
+
+#tournament_nbplayers {
+  background-color: white;
+  border: 5px solid #0554cb;
+  color: $blue;
+  text-align: center;
+}
+
+#tournament_nbplayers:focus {
+  border: 6px solid #0554cb;
+}
 
 // // SUBMIT BUTTON
 

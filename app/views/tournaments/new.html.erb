@@ -1,14 +1,30 @@
-<%= simple_form_for(@tournament) do |f| %>
+<div class="return-btn">
+  <%= link_to "< Retour", menu_path, class: "btn-return" %>
+</div>
 
-  <div class="form">
-    <%= f.input :name,
-                label: "Nom du tournoi" %>
-  <%= f.input :nbplayers,
-                label: "Nombre de participants" %>
-  </div>
+<div class="home-page tounament-page">
+  <%= simple_form_for(@tournament) do |f| %>
 
-  <div class="btn-submit">
-    <%= f.button :submit,"Créer un tournoi" %>
-  </div>
+    <div class="tournament-form">
+      <%= f.input :name,
+                  placeholder: 'Nom du tournois',
+                  :label => false %>
+    <%= f.input :nbplayers,
+                required: true,
+                placeholder: 'Nombre de participants',
+                :label => false %>
 
-<% end %>
+
+      <div class="white-border-btn">
+        <div class="dark-blue-border">
+          <div class="light-blue-border">
+            <div class="blue-container">
+              <%= f.button :submit,"CREER UN TOURNOIS"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
