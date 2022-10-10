@@ -11,6 +11,10 @@ class TournamentsController < ApplicationController
     redirect_to new_tournament_player_path(@tournament), status: :see_other
   end
 
+  def qualification
+    @tournament = Tournament.find(params[:id])
+  end
+
   private
 
   def tournament_params

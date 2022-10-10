@@ -1,1 +1,6 @@
-eeee
+<% @tournament.chickens.each do |chicken|  %>
+<h2>Poule</h2>
+<% chicken.players.each do |player| %>
+<%= player.nickname %>
+<% end %>
+<% end %>
