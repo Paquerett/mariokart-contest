@@ -99,8 +99,26 @@ select:-webkit-autofill:focus {
 #tournament_name {
   background-color: #ffffff;
   border: 5px solid #0554cb;
+  border-radius: 5px;
   color: $blue;
   text-align: center;
+  font-family: $my-font;
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+  border: 5px solid white;
+  -webkit-text-fill-color: black;
+  transition: background-color 5000s ease-in-out 0s;
+  text-align: center;
+  font-family: $my-font;
+  }
 }
 
 #tournament_name:focus {
@@ -112,11 +130,28 @@ select:-webkit-autofill:focus {
 #tournament_nbplayers {
   background-color: white;
   border: 5px solid #0554cb;
+  border-radius: 5px;
   color: $blue;
   text-align: center;
+  font-family: $my-font;
 }
 
 #tournament_nbplayers:focus {
+  border: 6px solid #0554cb;
+}
+
+// PLAYER NICKNAME INPUT
+
+#player_nickname {
+  background-color: white;
+  border: 5px solid #0554cb;
+  border-radius: 5px;
+  color: $blue;
+  text-align: center;
+  font-family: $my-font;
+}
+
+#player_nickname:focus {
   border: 6px solid #0554cb;
 }
 

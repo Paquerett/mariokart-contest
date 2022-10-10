@@ -8,7 +8,8 @@
     <div class="tournament-form">
       <%= f.input :name,
                   placeholder: 'Nom du tournois',
-                  :label => false %>
+                  :label => false,
+                  autocomplete: "false" %>
     <%= f.input :nbplayers,
                 required: true,
                 placeholder: 'Nombre de participants',
