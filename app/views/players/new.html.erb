@@ -1,11 +1,20 @@
-     <% @players.each do |player| %>
-    <%= simple_form_for [@tournament, player] do |f| %>
-    <ul>
-      <li>
-        <%= f.input :nickname,
-                label: "nom du participant" %>
-      </li>
-    <%= f.button :submit, "ajouter le joueur" %>
-    </ul>
-   <% end %>
-    <% end %>
+<div class="return-btn">
+  <%= link_to "< Retour", menu_path, class: "btn-return" %>
+</div>
+
+<div class="home-page tounament-page">
+  <% @players.each do |player| %>
+      <%= simple_form_for [@tournament, player] do |f| %>
+    <div class="new-player">
+
+
+          <%= f.input :nickname,
+                      placeholder: 'Nom du participant',
+                      :label => false %>
+
+        <h1><%= f.button :submit, "+" %></h1>
+
+      <% end %>
+    </div>
+  <% end %>
+</div>
