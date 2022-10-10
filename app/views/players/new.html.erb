@@ -1,20 +1,26 @@
+<%# LIST DES JOUEURS PAGE %>
+
 <div class="return-btn">
   <%= link_to "< Retour", menu_path, class: "btn-return" %>
 </div>
 
+
 <div class="home-page tounament-page">
-  <% @players.each do |player| %>
+  <h1>Noms des joueurs</h1>
+  <div class="players-btns">
+    <% @players.each do |player| %>
       <%= simple_form_for [@tournament, player] do |f| %>
-    <div class="new-player">
+      <div class="new-player">
 
 
-          <%= f.input :nickname,
-                      placeholder: 'Nom du participant',
-                      :label => false %>
+            <%= f.input :nickname,
+                        placeholder: 'Nom du participant',
+                        :label => false %>
 
-        <h1><%= f.button :submit, "+" %></h1>
+          <h2><%= f.button :submit, "+" %></h2>
 
-      <% end %>
-    </div>
-  <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
