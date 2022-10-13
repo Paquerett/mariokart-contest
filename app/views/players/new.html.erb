@@ -6,7 +6,7 @@
 
 
 <div class="home-page tounament-page">
-  <h1><%= @tournament.name.upcase %> <br> <span style="font-size: 50px; color: #0554cbba;">Noms des joueurs</span></h1>
+  <h1><%= @tournament.name.upcase %> <br> <span style="font-size: 50px; color: #0554cbba; line-height: 40px;">Noms des joueurs</span></h1>
   <div class="players-btns">
     <% @players.each do |player| %>
       <%= simple_form_for [@tournament, player] do |f| %>
