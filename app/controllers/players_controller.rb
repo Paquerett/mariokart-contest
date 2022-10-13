@@ -3,9 +3,9 @@ class PlayersController < ApplicationController
     iterator = 0
     @tournament = Tournament.find(params[:tournament_id])
     @players =[]
-   @tournament.nbplayers.times do
-    @players << Player.new
-   end
+    @tournament.nbplayers.times do
+      @players << Player.new
+    end
   end
 
   def create
