@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "menu", to: "pages#menu"
   resources :tournaments, only: %i[new create] do
-    resources :players, only: %i[new create]
+    resources :players, only: %i[new create show]
     member do
       get :qualification
       get :demifinal
@@ -15,5 +15,7 @@ Rails.application.routes.draw do
       get :ranking
     end
   end
-  resources :chickens, only: %i[show]
+  resources :chickens, only: %i[show] do
+    resources :players, only: %i[update]
+  end
 end
