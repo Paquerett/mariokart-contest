@@ -13,6 +13,7 @@ class PlayersController < ApplicationController
     @tournament = Tournament.find(params[:tournament_id])
     @player.tournament = @tournament
     @player.save
+    name = ["banane", "carapace", "champignon", "clochette", "crossing", "eclair", "etoile", "feuille", "fleur", "oeuf", "speciale", "triforce"]
     if @tournament.nbplayers == @tournament.players.count
       iterateur = 1
       if @tournament.chickens == []
@@ -24,6 +25,7 @@ class PlayersController < ApplicationController
               players = @tournament.players.where(chicken: nil)
               player = players.sample
               player.chicken = @chicken
+              @chicken.circuit_name = name.sample
               @chicken.save
               player.save
               iterateur += 1
@@ -38,6 +40,7 @@ class PlayersController < ApplicationController
               players = @tournament.players.where(chicken: nil)
               player = players.sample
               player.chicken = @chicken
+              @chicken.circuit_name = name.sample
               @chicken.save
               player.save
               iterateur += 1
@@ -49,6 +52,7 @@ class PlayersController < ApplicationController
             players = @tournament.players.where(chicken: nil)
             player = players.sample
             player.chicken = @chicken
+            @chicken.circuit_name = name.sample
             @chicken.save
             player.save
           end
@@ -61,6 +65,7 @@ class PlayersController < ApplicationController
               players = @tournament.players.where(chicken: nil)
               player = players.sample
               player.chicken = @chicken
+              @chicken.circuit_name = name.sample
               @chicken.save
               player.save
               iterateur += 1
@@ -73,6 +78,7 @@ class PlayersController < ApplicationController
               players = @tournament.players.where(chicken: nil)
               player = players.sample
               player.chicken = @chicken
+              @chicken.circuit_name = name.sample
               @chicken.save
               player.save
             end
@@ -86,6 +92,7 @@ class PlayersController < ApplicationController
               players = @tournament.players.where(chicken: nil)
               player = players.sample
               player.chicken = @chicken
+              @chicken.circuit_name = name.sample
               @chicken.save
               player.save
               iterateur += 1
@@ -97,6 +104,7 @@ class PlayersController < ApplicationController
             players = @tournament.players.where(chicken: nil)
             player = players.sample
             player.chicken = @chicken
+            @chicken.circuit_name = name.sample
             @chicken.save
             player.save
           end
@@ -106,12 +114,19 @@ class PlayersController < ApplicationController
     end
   end
 
-  def qualification
+  def update
+    chicken = Chicken.find(params[:chicken_id])
+    tournament = chicken.tournament
+    @player = Player.find(params[:id])
+    @player.update(player_params)
+    if chicken.players.where(points: nil) == []
+      redirect_to qualification_tournament_path(tournament), status: :see_other
+    end
   end
 
   private
 
   def player_params
-    params.require(:player).permit(:nickname)
+    params.require(:player).permit(:nickname, :points)
   end
 end

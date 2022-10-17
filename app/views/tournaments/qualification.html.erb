@@ -1,6 +1,9 @@
 <% @tournament.chickens.each do |chicken|  %>
-<h2>Poule</h2>
-<% chicken.players.each do |player| %>
-<%= player.nickname %>
-<% end %>
+  <h2>Poule Circuit <%= chicken.circuit_name %></h2>
+  <% chicken.players.each do |player| %>
+    <%= player.nickname %>
+  <% end %>
+  <%= link_to chicken_path(chicken), data: {turbo_method: :get} do %>
+    <h2>Ajouter un score</h2>
+  <% end %>
 <% end %>
