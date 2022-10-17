@@ -1,0 +1,117 @@
+// CSS QUALIFICATION PAGE
+
+.menu-page {
+  background-color: $blue;
+}
+
+.qualification-page {
+  padding: 40px 0px 0px 0px;
+}
+
+.poule-card-black-border {
+  background-color: black;
+  width: 344px;
+  height: 324px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 80px 0px 30px 0px;
+
+  .poule-card-dark-border {
+    background-color: #4b4b4b;
+    width: 334px;
+    height: 314px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px black;
+  }
+
+  .poule-card-grey-border {
+    background-color: #9e9c9c;
+    width: 324px;
+    height: 304px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .poule-card-white-container {
+    background-color: rgb(255, 255, 255);
+    padding: 40px 0px 0px 0px;
+    color: black;
+    text-align: center;
+    width: 320px;
+    height: 300px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-family: $my-font;
+    position: relative;
+    align-items: center;
+
+    h2 {
+      font-family: $my-font;
+      font-size: 50px;
+      line-height: 40px;
+      margin: 0px;
+    }
+  }
+
+  .coupe-image {
+    position: absolute;
+    left: 90px;
+    top: -95px;
+  }
+}
+
+.players-poule {
+  padding: 20px 0px 10px 0px;
+}
+
+.player-poule-name {
+  display: flex;
+  margin: 0px 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 30px;
+  line-height: 24px;
+
+  .avatar-image {
+    margin: 4px 0px 0px 10px;
+  }
+}
+
+.score-btn-border {
+  background-color: #925808;
+  width: 158px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.score-btn {
+  text-align: center;
+  background-color: #D0AA1C;
+  color: #A46E05;
+  font-family: $my-font;
+  border-radius: 5px;
+  width: 154px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h6 {
+    font-family: $my-font;
+    font-size: 26px;
+    margin: 0px;
+  }
+}

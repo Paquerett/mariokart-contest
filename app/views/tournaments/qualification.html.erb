@@ -1,9 +1,30 @@
-<% @tournament.chickens.each do |chicken|  %>
-  <h2>Poule Circuit <%= chicken.circuit_name %></h2>
-  <% chicken.players.each do |player| %>
-    <%= player.nickname %>
+<%# QUALIFICATION PAGE %>
+<div class="home-page menu-page qualification-page">
+  <% @tournament.chickens.each do |chicken|  %>
+    <div class="poule-card-black-border">
+      <div class="poule-card-dark-border">
+        <div class="poule-card-grey-border">
+          <div class="poule-card-white-container">
+            <%= image_tag "coupes/coupe-banane.svg", class: "coupe-image", :width => 140 %>
+            <h2>Circuit <%= chicken.circuit_name %></h2>
+              <div class="players-poule">
+                <% chicken.players.each do |player| %>
+                  <div class="player-poule-name">
+                    <%= player.nickname %>
+                    <%= image_tag "avatars/mario.svg", class: "avatar-image", :width => 30 %>
+                  </div>
+                <% end %>
+              </div>
+            <%= link_to chicken_path(chicken), data: {turbo_method: :get} do %>
+              <div class="score-btn-border">
+                <div class="score-btn">
+                  <h6>NOTER LES SCORES</h6>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <%= link_to chicken_path(chicken), data: {turbo_method: :get} do %>
-    <h2>Ajouter un score</h2>
-  <% end %>
-<% end %>
+</div>
