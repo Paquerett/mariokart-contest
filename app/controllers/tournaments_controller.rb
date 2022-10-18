@@ -13,6 +13,10 @@ class TournamentsController < ApplicationController
 
   def qualification
     @tournament = Tournament.find(params[:id])
+    @nextround = 0
+    @tournament.players.each do |player|
+      @nextround = 1 if player.points.positive?
+    end
   end
 
   private

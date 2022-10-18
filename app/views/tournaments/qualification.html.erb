@@ -27,4 +27,20 @@
       </div>
     </div>
   <% end %>
+  <br>
+  <br>
+  <% if @nextround == 1 %>
+    <div class="btn-menu">
+    <%= link_to demifinal_tournament_path(@tournament), data: {turbo_method: :get} do %>
+      <div class="white-border">
+        <div class="dark-red-border">
+          <div class="light-red-border">
+            <div class="red-container">
+              <h2>À nous les demi-finals</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
