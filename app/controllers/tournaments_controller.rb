@@ -22,6 +22,10 @@ class TournamentsController < ApplicationController
   def demifinal
     @tournament = Tournament.find(params[:id])
     name = ["banane", "carapace", "champignon", "clochette", "crossing", "eclair", "etoile", "feuille", "fleur", "oeuf", "speciale", "triforce"]
+    @tournament.chickens.each do |chicken|
+      chicken.circuit_name = ""
+      chicken.save
+    end
     @tournament.players.each do |player|
       player.chicken = nil
       player.save
