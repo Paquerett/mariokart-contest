@@ -1,6 +1,6 @@
 <%# QUALIFICATION PAGE %>
 <div class="home-page menu-page qualification-page">
-  <% @tournament.chickens.each do |chicken|  %>
+  <% @tournament.chickens.where.not(circuit_name: "").each do |chicken|  %>
     <div class="poule-card-black-border">
       <div class="poule-card-dark-border">
         <div class="poule-card-grey-border">
@@ -31,12 +31,12 @@
   <br>
   <% if @nextround == 1 %>
     <div class="btn-menu">
-    <%= link_to demifinal_tournament_path(@tournament), data: {turbo_method: :get} do %>
+    <%= link_to final_tournament_path(@tournament), data: {turbo_method: :get} do %>
       <div class="white-border">
         <div class="dark-red-border">
           <div class="light-red-border">
             <div class="red-container">
-              <h2>À nous les demi-finals</h2>
+              <h2>À nous la finale</h2>
             </div>
           </div>
         </div>
