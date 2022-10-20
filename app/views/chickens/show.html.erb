@@ -1,13 +1,25 @@
 <%# CHICKEN SHOW CSS %>
 
 <div class="home-page menu-page">
-  <% @players.each do |player| %>
-    <%= simple_form_for [@chicken, player] do |f| %>
+  <% if @players.last.points == nil %>
+    <% @players.each do |player| %>
+      <%= simple_form_for [@chicken, player] do |f| %>
         <%= f.input :points,
                     placeholder: 'Points du joueur',
                     :label => false,
                     autocomplete: "false" %>
         <%= f.button :submit,"Valider"%>
+       <% end %>
+    <% end %>
+  <% elsif @players.last.pointsdemi == nil %>
+    <% @players.each do |player| %>
+      <%= simple_form_for [@chicken, player] do |f| %>
+        <%= f.input :pointsdemi,
+                    placeholder: 'Points du joueur',
+                    :label => false,
+                    autocomplete: "false" %>
+        <%= f.button :submit,"Valider"%>
+       <% end %>
     <% end %>
   <% end %>
 </div>

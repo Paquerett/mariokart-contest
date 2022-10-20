@@ -29,7 +29,7 @@
   <% end %>
   <br>
   <br>
-  <% if @nextround == 1 %>
+  <% if @nextround == @tournament.players.count %>
     <div class="btn-menu">
     <%= link_to final_tournament_path(@tournament), data: {turbo_method: :get} do %>
       <div class="white-border">
