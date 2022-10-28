@@ -1,1 +1,46 @@
-aaa
+<%# QUALIFICATION PAGE %>
+<div class="home-page menu-page qualification-page">
+  <% @tournament.chickens.where.not(circuit_name: "").each do |chicken|  %>
+    <div class="poule-card-black-border">
+      <div class="poule-card-dark-border">
+        <div class="poule-card-grey-border">
+          <div class="poule-card-white-container">
+            <%= image_tag "coupes/coupe-banane.svg", class: "coupe-image", :width => 140 %>
+            <h2>Circuit <%= chicken.circuit_name %></h2>
+              <div class="players-poule">
+                <% chicken.players.each do |player| %>
+                  <div class="player-poule-name">
+                    <%= player.nickname %>
+                    <%= image_tag "avatars/mario.svg", class: "avatar-image", :width => 30 %>
+                  </div>
+                <% end %>
+              </div>
+            <%= link_to chicken_path(chicken), data: {turbo_method: :get} do %>
+              <div class="score-btn-border">
+                <div class="score-btn">
+                  <h6>NOTER LES SCORES</h6>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <% if @nextround == @tournament.players.count %>
+    <div class="btn-menu">
+    <%= link_to  ranking_tournament_path(@tournament), data: {turbo_method: :get} do %>
+      <div class="white-border">
+        <div class="dark-red-border">
+          <div class="light-red-border">
+            <div class="red-container">
+              <h2>Voir le classment complet</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -23,14 +23,14 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:id])
     name = ["banane", "carapace", "champignon", "clochette", "crossing", "eclair", "etoile", "feuille", "fleur", "oeuf", "speciale", "triforce"]
     if @tournament.players.where.not(pointsdemi: nil) == []
-    @tournament.chickens.each do |chicken|
-      chicken.circuit_name = ""
-      chicken.save
-    end
-    @tournament.players.each do |player|
-      player.chicken = nil
-      player.save
-    end
+      @tournament.chickens.each do |chicken|
+        chicken.circuit_name = ""
+        chicken.save
+      end
+      @tournament.players.each do |player|
+        player.chicken = nil
+        player.save
+      end
       iterateur = 1
         if @tournament.nbplayers % 4 == 0
           while iterateur < @tournament.nbplayers
@@ -135,15 +135,23 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:id])
     name = ["banane", "carapace", "champignon", "clochette", "crossing", "eclair", "etoile", "feuille", "fleur", "oeuf", "speciale", "triforce"]
     iterateur = 1
-    rank = @tournament.players.order(points: :desc)
-
-    if @tournament.nbplayers % 4 == 0
+    if @tournament.players.where.not(pointsfinal: nil) == []
+      @tournament.chickens.each do |chicken|
+        chicken.circuit_name = ""
+        chicken.save
+      end
+      @tournament.players.each do |player|
+        player.chicken = nil
+        player.pointstotal = player.pointsdemi + player.points
+        player.save
+      end
+      if @tournament.nbplayers % 4 == 0
       while iterateur < @tournament.nbplayers
             @chicken = Chicken.new
             4.times do
               @chicken.tournament = @tournament
-              players = @tournament.players.where(chicken: nil)
-              player = players.sample
+              players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+              player = players.first
               player.chicken = @chicken
               @chicken.circuit_name = name.sample
               @chicken.save
@@ -157,8 +165,8 @@ class TournamentsController < ApplicationController
             @chicken = Chicken.new
             4.times do
               @chicken.tournament = @tournament
-              players = @tournament.players.where(chicken: nil)
-              player = players.sample
+              players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+              player = players.first
               player.chicken = @chicken
               @chicken.circuit_name = name.sample
               @chicken.save
@@ -169,8 +177,8 @@ class TournamentsController < ApplicationController
           @chicken = Chicken.new
           3.times do
             @chicken.tournament = @tournament
-            players = @tournament.players.where(chicken: nil)
-            player = players.sample
+            players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+            player = players.first
             player.chicken = @chicken
             @chicken.circuit_name = name.sample
             @chicken.save
@@ -182,8 +190,8 @@ class TournamentsController < ApplicationController
             @chicken = Chicken.new
             4.times do
               @chicken.tournament = @tournament
-              players = @tournament.players.where(chicken: nil)
-              player = players.sample
+              players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+              player = players.first
               player.chicken = @chicken
               @chicken.circuit_name = name.sample
               @chicken.save
@@ -195,8 +203,8 @@ class TournamentsController < ApplicationController
             @chicken = Chicken.new
             3.times do
               @chicken.tournament = @tournament
-              players = @tournament.players.where(chicken: nil)
-              player = players.sample
+              players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+              player = players.first
               player.chicken = @chicken
               @chicken.circuit_name = name.sample
               @chicken.save
@@ -209,8 +217,8 @@ class TournamentsController < ApplicationController
             @chicken = Chicken.new
             4.times do
               @chicken.tournament = @tournament
-              players = @tournament.players.where(chicken: nil)
-              player = players.sample
+              players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+              player = players.first
               player.chicken = @chicken
               @chicken.circuit_name = name.sample
               @chicken.save
@@ -221,14 +229,25 @@ class TournamentsController < ApplicationController
           @chicken = Chicken.new
           3.times do
             @chicken.tournament = @tournament
-            players = @tournament.players.where(chicken: nil)
-            player = players.sample
+            players = @tournament.players.where(chicken: nil).order(pointstotal: :desc)
+            player = players.first
             player.chicken = @chicken
             @chicken.circuit_name = name.sample
             @chicken.save
             player.save
           end
         end
+      end
+        @nextround = 0
+        @tournament.players.each do |player|
+          @nextround += 1 if player.pointsfinal != nil
+        end
+  end
+
+  def ranking
+    @tournament = Tournament.find(params[:id])
+    @classement = 0
+    @players = @tournament.players.order(pointstotal: :desc)
   end
 
   private
