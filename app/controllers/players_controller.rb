@@ -128,12 +128,17 @@ class PlayersController < ApplicationController
       if chicken.players.where(pointsdemi: nil) == []
         redirect_to demifinal_tournament_path(tournament), status: :see_other
       end
+    elsif @player.pointsfinal == nil
+      @player.update(player_params)
+      if chicken.players.where(pointsfinal: nil) == []
+        redirect_to final_tournament_path(tournament), status: :see_other
+      end
     end
   end
 
   private
 
   def player_params
-    params.require(:player).permit(:nickname, :points, :pointsdemi)
+    params.require(:player).permit(:nickname, :points, :pointsdemi, :pointsfinal)
   end
 end
