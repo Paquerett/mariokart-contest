@@ -118,15 +118,22 @@ class PlayersController < ApplicationController
     chicken = Chicken.find(params[:chicken_id])
     tournament = chicken.tournament
     @player = Player.find(params[:id])
-    @player.update(player_params)
-    if chicken.players.where(points: nil) == []
-      redirect_to qualification_tournament_path(tournament), status: :see_other
+    if @player.points == nil
+      @player.update(player_params)
+      if chicken.players.where(points: nil) == []
+        redirect_to qualification_tournament_path(tournament), status: :see_other
+      end
+    elsif @player.pointsdemi == nil
+      @player.update(player_params)
+      if chicken.players.where(pointsdemi: nil) == []
+        redirect_to demifinal_tournament_path(tournament), status: :see_other
+      end
     end
   end
 
   private
 
   def player_params
-    params.require(:player).permit(:nickname, :points)
+    params.require(:player).permit(:nickname, :points, :pointsdemi)
   end
 end

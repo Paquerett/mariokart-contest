@@ -15,13 +15,14 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.find(params[:id])
     @nextround = 0
     @tournament.players.each do |player|
-      @nextround = 1 if player.points != nil
+      @nextround += 1 if player.points != nil
     end
   end
 
   def demifinal
     @tournament = Tournament.find(params[:id])
     name = ["banane", "carapace", "champignon", "clochette", "crossing", "eclair", "etoile", "feuille", "fleur", "oeuf", "speciale", "triforce"]
+    if @tournament.players.where.not(pointsdemi: nil) == []
     @tournament.chickens.each do |chicken|
       chicken.circuit_name = ""
       chicken.save
@@ -122,6 +123,11 @@ class TournamentsController < ApplicationController
             @chicken.save
             player.save
           end
+        end
+      end
+        @nextround = 0
+        @tournament.players.each do |player|
+          @nextround += 1 if player.pointsdemi != nil
         end
   end
 
